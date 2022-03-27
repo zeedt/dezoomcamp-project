@@ -1,0 +1,45 @@
+
+version: 2
+
+models:
+  - name: state_incident_summary
+    description: "This is the incident summary per state"
+    columns:
+      - name: state
+        description: "The name of the state"
+        tests:
+          - unique
+          - not_null
+      - name: number_of_incidents
+        description: "The number of state incidents"
+        tests:
+          - not_null
+      - name: victim_count
+        description: "Victim count"
+        tests:
+          - not_null
+      - name: offfence_count
+        description: "Offence count"
+        tests:
+          - not_null
+
+  - name: year_incident_summary
+    description: "Year incident summary"
+    columns:
+      - name: year
+        description: "The year of incident"
+        tests:
+          - unique
+          - not_null
+      - name: number_of_incidents
+        description: "The number of incidents in year"
+        tests:
+          - not_null
+      - name: victim_count
+        description: "Victim count"
+        tests:
+          - not_null
+      - name: offfence_count
+        description: "Offence count"
+        tests:
+          - not_null

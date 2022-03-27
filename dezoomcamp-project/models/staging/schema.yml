@@ -1,0 +1,38 @@
+
+version: 2
+
+sources:
+  - name : staging
+    database : dtc-de
+    schema : dezoomcamp
+    tables :
+      - name : incidents_partitioned_clustered
+
+models:
+  - name: stg_incidents
+    description: "Incidents data"
+    columns:
+      - name: state
+        description: "State the incident happened"
+        tests:
+          - not_null
+      - name: ID
+        description: "Incident Unique number"
+        tests:
+          - not_null
+      - name: total_offender
+        description: "Total number of offenders for this incident"
+        tests:
+          - not_null
+      - name: total_victim
+        description: "Total number of victims for this incident"
+        tests:
+          - not_null
+      - name: total_offense
+        description: "Total number of offense for this incident"
+        tests:
+          - not_null
+      - name: date_sif
+        description: "The incident date in Stata Internal Form . If date of occurrence is unknown, the date the incident was reported is used."
+        tests:
+          - not_null
